@@ -279,7 +279,7 @@ class CountryTableViewCell: UITableViewCell {
 // Returns default options where necessary if the data source is not set.
 class CountryPickerViewDataSourceInternal: CountryPickerViewDataSource {
     
-    private unowned var view: CountryPickerView
+    private var view: CountryPickerView
     
     init(view: CountryPickerView) {
         self.view = view
