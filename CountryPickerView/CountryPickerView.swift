@@ -164,6 +164,7 @@ public class CountryPickerView: NibView {
         } else {
             let navigationVC = UINavigationController(rootViewController: countryVc)
             delegate?.countryPickerView(self, willShow: countryVc)
+            navigationVC.modalPresentationStyle = .fullScreen
             viewController.present(navigationVC, animated: true) {
                 self.delegate?.countryPickerView(self, didShow: countryVc)
             }
