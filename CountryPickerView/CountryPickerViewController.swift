@@ -90,8 +90,7 @@ extension CountryPickerViewController {
             return
         }
         searchController = UISearchController(searchResultsController:  nil)
-        searchController?.searchResultsUpdater = self
-        searchController?.dimsBackgroundDuringPresentation = false
+        searchController?.searchResultsUpdater = self 
         searchController?.hidesNavigationBarDuringPresentation = searchBarPosition == .tableViewHeader
         searchController?.definesPresentationContext = true
         searchController?.searchBar.delegate = self
