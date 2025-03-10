@@ -247,6 +247,8 @@ extension CountryPickerViewController: UISearchBarDelegate {
         // Show the back/left navigationItem button
         prepareNavItem()
         navigationItem.hidesBackButton = false
+        navigationController?.navigationBar.barTintColor = UIColor.systemBackground // Set your desired color
+        navigationController?.navigationBar.isTranslucent = false
     }
 }
 
