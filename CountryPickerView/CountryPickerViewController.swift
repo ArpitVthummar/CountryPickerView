@@ -244,15 +244,19 @@ extension CountryPickerViewController: UISearchBarDelegate {
     }
     
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        prepareNavItem()
-        navigationItem.hidesBackButton = false
-    
-       // Reset navigation bar appearance
-       navigationController?.navigationBar.barTintColor = UIColor.systemBackground
-       navigationController?.navigationBar.isTranslucent = false
-       navigationController?.navigationBar.setBackgroundImage(nil, for: .default) // Ensure background is visible
-       navigationController?.navigationBar.shadowImage = nil // Restore shadow if needed
-   }
+    // Restore navigation items
+    prepareNavItem()
+    navigationItem.hidesBackButton = false
+
+    // Restore navigation bar appearance
+    if let navBar = navigationController?.navigationBar {
+        navBar.isTranslucent = false
+        navBar.barTintColor = UIColor.systemBackground // Set to your desired color
+        navBar.backgroundColor = UIColor.systemBackground
+        navBar.setBackgroundImage(nil, for: .default) // Reset any transparent image
+        navBar.shadowImage = nil // Restore the default shadow
+    }
+  }
 }
 
 // MARK:- UISearchControllerDelegate
