@@ -162,10 +162,10 @@ public class CountryPickerView: NibView {
                 self.delegate?.countryPickerView(self, didShow: countryVc)
             }
         } else {
-            let navigationVC = UINavigationController(rootViewController: countryVc)
+            // let navigationVC = UINavigationController(rootViewController: countryVc)
             delegate?.countryPickerView(self, willShow: countryVc)
-            navigationVC.modalPresentationStyle = .fullScreen
-            viewController.present(navigationVC, animated: true) {
+            countryVc.modalPresentationStyle = .fullScreen
+            viewController.present(countryVc, animated: true) {
                 self.delegate?.countryPickerView(self, didShow: countryVc)
             }
         }
