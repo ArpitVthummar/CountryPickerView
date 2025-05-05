@@ -325,7 +325,8 @@ countryPickerView.setCountryByPhoneCode("+234")
 CountryPickerView is distributed under the MIT license. [See LICENSE](https://github.com/kizitonwose/CountryPickerView/blob/master/LICENSE.md) for details.
 
 Full usage:
-private func showCountryPicker() {
+
+    private func showCountryPicker() {
         let picker = CountryPickerView()
         picker.delegate = self
         picker.dataSource = self
@@ -333,7 +334,8 @@ private func showCountryPicker() {
     }
 
 CountryPickerViewDelegate Methods:
-func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+
+    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         flagImgView.image = country.flag
         codeLabel.text = country.phoneCode
         callingCode = country.phoneCode
@@ -341,10 +343,11 @@ func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry 
     }
 
 CountryPickerViewDataSource Methods: 
-func localeForCountryNameInList(in countryPickerView: CountryPickerView) -> Locale {
+
+    func localeForCountryNameInList(in countryPickerView: CountryPickerView) -> Locale {
         return Locale.current
- }
+    }
     
- func showCheckmarkInList(in countryPickerView: CountryPickerView) -> Bool {
+    func showCheckmarkInList(in countryPickerView: CountryPickerView) -> Bool {
 	return false
- }
+    }
